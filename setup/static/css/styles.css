@@ -1,7 +1,21 @@
 body{
-    background-color: black;
+    background-color: rgb(51, 40, 63)
 }
 
-h1{
+h1, h5, p {
     color: white
+}
+
+img {
+    width: 7%;
+}
+
+.rodape{
+    border: 3px solid white;
+    width: 99%;
+    height: 23px;
+    color: white;
+    margin-top: 50px;
+    padding-top: 5px;
+    padding-left: 6px;
 }
