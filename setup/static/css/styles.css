@@ -6,16 +6,18 @@ h1, h5, p {
     color: white
 }
 
+ul {
+    color: white;
+}
+
 img {
-    width: 7%;
+    width: 8.7%;
 }
 
 .rodape{
-    border: 2px solid white;
-    width: 99%;
     height: 23px;
     color: white;
-    margin-top: 50px;
+    margin-top: 45px;
     padding-top: 5px;
     padding-left: 6px;
 }
