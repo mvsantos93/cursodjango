@@ -23,3 +23,23 @@ class EixoTecnologia(models.Model):
         return self.nome
     class Meta:
         db_table = 'eixo'
+
+class Artigo(models.Model):
+    texto = models.TextField()
+    data_publicaçao = models.DateTimeField(auto_now_add=True)
+    id_fk_eixo = models.ForeignKey(
+        EixoTecnologia,
+        on_delete=models.CASCADE,
+        db_column='id_fk_eixo'
+    )
+    id_fk_autor = models.ForeignKey(
+        Autor,
+        on_delete=models.CASCADE,
+        db_column='id_fk_autor'
+    )
+
+    def __str__(self):
+        return f"Artigo {self.id} - {self.data_publicação}"
+    
+    class Meta:
+        db_table = 'artigo'
