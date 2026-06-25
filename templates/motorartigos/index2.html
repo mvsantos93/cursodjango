@@ -1,0 +1,43 @@
+{% extends 'motorartigos/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>O melhor site de Django, IA e Data Science do Brasil!</h1>
+
+    <br>
+    <br>
+
+    <a href="{% url 'artigo' %}">
+        <img src="{% static 'img/chatgpt_logo.png' %}" alt="logo do ChatGPT" />
+    </a>
+
+    <img src="{% static 'img/claude_logo.png' %}" alt="logo do Claude" />
+    <img src="{% static 'img/django_logo.png' %}" alt="logo do Django" />
+    <img src="{% static 'img/gemini_logo.png' %}" alt="logo do Gemini" />
+    <img src="{% static 'img/groq_logo.png' %}" alt="logo do Groq" />
+    <img src="{% static 'img/huggingface_logo.png' %}" alt="logo do Hagging Face" />
+    <img src="{% static 'img/langflow_logo.png' %}" alt="logo do Langflow" />
+    <img src="{% static 'img/lechat_logo.png' %}" alt="logo do LeChat" />
+    <img src="{% static 'img/maritaca_logo.png' %}" alt="logo do Maritaca" />
+    <img src="{% static 'img/mysql_logo.png' %}" alt="logo do MySQL" />
+    <img src="{% static 'img/python_logo.png' %}" alt="logo do Python" />
+
+    <br>
+    <br>
+    <br>
+
+    <h1>Autores Cadastrados</h1>
+    <ul>
+        {% for autor in autores %}
+            <li>
+                <strong>ID do Autor:</strong> {{ chave }} <br>
+                <strong>Nome:</strong> {{ autor.nome }} <br>
+                <strong>Biografia:</strong> {{ autor.biografia }} <br>
+                <strong>E-mail:</strong> {{ autor.email }} <br>
+            </li>
+            <hr>
+        {% empty %}
+            <p>Nenhum autor encontrado</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
