@@ -1,16 +1,16 @@
 /* Configurações Gerais do Tema Dark */
 body {
-    background-color: #0b0f19;
+    background-color: #221329;
     color: #ffffff;
     font-family: system-ui, -apple-system, sans-serif;
 }
 
 .bg-dark-custom {
-    background-color: #0b0f19;
+    background-color: #161616;
 }
 
 .border-dark-light {
-    border-color: #1e2640 !important;
+    border-color: #221329;
 }
 
 .max-w-text {
@@ -27,13 +27,13 @@ body {
 
 /* Input de Busca */
 .search-box {
-    background-color: #111827;
-    border: 1px solid #1f2937;
+    background-color: #9350b3;
+    border: 1px solid #461c57;
 }
 
 /* Filtros / Eixos */
 .btn-filter {
-    background-color: #111827;
+    background-color: #221329;
     border: 1px solid #1f2937;
     color: #9ca3af;
     font-size: 0.85rem;
@@ -43,14 +43,14 @@ body {
 }
 
 .btn-filter:hover {
-    background-color: #1f2937;
+    background-color: #432552;
     color: #fff;
 }
 
 .btn-filter.active {
-    background-color: #3b82f6;
+    background-color: #8b4ca8;
     color: #ffffff;
-    border-color: #3b82f6;
+    border-color: #3b2147;
 }
 
 /* Botões de navegação carrossel */
@@ -67,7 +67,7 @@ body {
 
 /* Estilização dos Cards */
 .card-custom {
-    background-color: #111c30;
+    background-color: #3c2c44;
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -82,7 +82,7 @@ body {
 .bg-danger-custom { background-color: #ef4444; font-size: 0.7rem; }
 .bg-warning-custom { background-color: #f59e0b; font-size: 0.7rem; }
 .bg-success-custom { background-color: #10b981; font-size: 0.7rem; }
-.text-primary-custom { color: #60a5fa; }
+.text-primary-custom { color: #b67dd1; }
 
 /* Placeholders das Imagens dos Cards com os tons da imagem */
 .thumb-gradient {
@@ -105,7 +105,7 @@ body {
     display: inline-block;
     width: 24px;
     height: 24px;
-    background-color: #6366f1;
+    background-color: #8342a1;
     border-radius: 50%;
     text-align: center;
     font-size: 0.65rem;
