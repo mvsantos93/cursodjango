@@ -1,77 +1,45 @@
 from django.db import models
-from tinymce.models import HTMLField
 
+# Create your models here.
+# aqui vou criar minhas classses de entidade
 
 class Autor(models.Model):
-    nome = models.CharField(max_length=100, verbose_name='Nome')
-    biografia = models.TextField(verbose_name='Biografia')
-    email = models.EmailField(verbose_name='E-mail')
+    #O atributo id é automático.
+    # chave primária: imutável, universal e única
+    nome = models.CharField(max_length=100)
+    biografia = models.TextField()
+    email = models.EmailField()
 
     def __str__(self):
         return self.nome
-
     class Meta:
         db_table = 'autor'
-        verbose_name = 'Autor'
-        verbose_name_plural = 'Autores'
 
 
 class EixoTecnologia(models.Model):
-    nome = models.CharField(max_length=60, verbose_name='Nome')
+    nome = models.CharField(max_length=60)
 
     def __str__(self):
         return self.nome
-
     class Meta:
         db_table = 'eixo'
-        verbose_name = 'Eixo de Tecnologia'
-        verbose_name_plural = 'Eixos de Tecnologia'
-
 
 class Artigo(models.Model):
-
-    titulo = models.CharField(        
-        max_length=200,
-        verbose_name='Título',
-        default='Sem título'
-    )
-    TAG_NIVEL = [
-        ("B", "Básico"),
-        ("I", "Intermediário"),
-        ("A", "Avançado"),
-    ]
-
-    nivel = models.CharField(
-        max_length=1,
-        choices=TAG_NIVEL,
-        default='B',
-        verbose_name='Nível'
-    )
-    texto = HTMLField(verbose_name='Texto')
-    data_publicacao = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name='Data de Publicação'
-    )
+    texto = models.TextField()
+    data_publicacao = models.DateTimeField(auto_now_add=True)
     id_fk_eixo = models.ForeignKey(
         EixoTecnologia,
         on_delete=models.CASCADE,
-        db_column='id_fk_eixo',
-        verbose_name='Eixo',        
-        related_name='artigos'
+        db_column='id_fk_eixo'
     )
     id_fk_autor = models.ForeignKey(
         Autor,
         on_delete=models.CASCADE,
-        db_column='id_fk_autor',
-        verbose_name='Autor',       
-        related_name='artigos'
+        db_column='id_fk_autor'
     )
 
     def __str__(self):
-        return f"Artigo {self.id} – {self.id_fk_autor.nome}"
-
+        return f"Artigo {self.id} - {self.data_publicação}"
+    
     class Meta:
         db_table = 'artigo'
-        verbose_name = 'Artigo'
-        verbose_name_plural = 'Artigos'
-        ordering = ['-data_publicacao']
