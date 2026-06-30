@@ -13,21 +13,52 @@
 
     <section class="container mb-5">
         <div class="search-box p-3 rounded d-flex align-items-center">
-            <span class="text-secondary me-2">🔍</span>
-            <input type="text" class="form-control bg-transparent border-0 text-white shadow-none" placeholder="Pesquisar..">
+            <span class="text-secondary me-3">🔍</span>
+            <input type="text" id="searchInput" class="form-control border-0 text-black shadow-none" placeholder="Pesquisar..">
         </div>
     </section>
 
     <section class="container mb-5">
         <h5 class="text-white fw-bold mb-3">Eixos de Tecnologia</h5>
         <div class="d-flex flex-wrap gap-2">
-            <a href="{% url 'index' %}" class="btn btn-filter active">Todos os artigos</a>
-            <a href="#" class="btn btn-filter">Mobile</a>
-            <a href="#" class="btn btn-filter">Programação</a>
-            <a href="#" class="btn btn-filter">Front-end</a>
-            <a href="#" class="btn btn-filter">DevOps</a>
-            <a href="#" class="btn btn-filter">UX & Design</a>
-            <a href="#" class="btn btn-filter">Data Science</a>
-            <a href="#" class="btn btn-filter">Inteligência Artificial</a>
+            <button class="btn btn-filter active"
+                    data-filter="todos">
+                Todos os artigos
+            </button>
+
+            <button class="btn btn-filter"
+                    data-filter="mobile">
+                Mobile
+            </button>
+
+            <button class="btn btn-filter"
+                    data-filter="programação">
+                Programação
+            </button>
+
+            <button class="btn btn-filter"
+                    data-filter="frontend">
+                Front-end
+            </button>
+
+            <button class="btn btn-filter"
+                    data-filter="devops">
+                DevOps
+            </button>
+
+            <button class="btn btn-filter"
+                    data-filter="ux">
+                UX & Design
+            </button>
+
+            <button class="btn btn-filter"
+                    data-filter="datascience">
+                Data Science
+            </button>
+
+            <button class="btn btn-filter"
+                    data-filter="ia">
+                Inteligência Artificial
+            </button>
         </div>
     </section>

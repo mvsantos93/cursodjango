@@ -19,5 +19,96 @@
 
     {% include 'motorartigos/partials/_footer.html' %}
 
+<script>
+
+//
+// PESQUISA
+//
+
+const searchInput = document.getElementById("searchInput");
+
+if (searchInput){
+
+    searchInput.addEventListener("keyup", function(){
+
+        const texto = this.value.toLowerCase();
+
+        document.querySelectorAll(".card-custom").forEach(card=>{
+
+            const titulo = card.querySelector(".card-title")
+                               .textContent
+                               .toLowerCase();
+
+            card.parentElement.style.display =
+                titulo.includes(texto)
+                ? ""
+                : "none";
+
+        });
+
+    });
+
+}
+
+//
+// FILTROS
+//
+
+const filtros = document.querySelectorAll(".btn-filter");
+
+filtros.forEach(botao=>{
+
+    botao.addEventListener("click", ()=>{
+
+        filtros.forEach(b=>b.classList.remove("active"));
+        botao.classList.add("active");
+
+        const categoria = botao.dataset.filter;
+
+        document.querySelectorAll(".card-custom").forEach(card=>{
+
+            if(categoria=="todos" ||
+               card.dataset.category==categoria){
+
+                card.parentElement.style.display="";
+
+            }else{
+
+                card.parentElement.style.display="none";
+
+            }
+
+        });
+
+    });
+
+});
+
+//
+// SLIDER
+//
+
+const slider = document.getElementById("slider");
+
+if(slider){
+
+    document.getElementById("next").onclick = ()=>{
+
+        slider.scrollBy({
+            left:320,
+            behavior:"smooth"
+        });
+
+    };
+
+    document.getElementById("prev").onclick = ()=>{
+
+        slider.scrollBy({
+            left:-320,
+            behavior:"smooth"
+        });
+    };
+}
+</script>
 </body>
 </html>

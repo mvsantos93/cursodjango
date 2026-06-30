@@ -6,4 +6,4 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('adminmv/', admin.site.urls),
     path('', include('motorartigos.urls'),)
-]+ static(settings.MEDIA, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

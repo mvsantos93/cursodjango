@@ -38,6 +38,16 @@ class Artigo(models.Model):
         db_column='id_fk_autor'
     )
 
+    titulo = models.CharField(
+        max_length=200,
+        verbose_name='Título',
+        default='Sem título'
+    )
+    nivel = models.CharField(
+        max_length=20,
+        verbose_name='Nível',
+        default='Sem nível'
+    )
     foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)
     publicada = models.BooleanField(default=True)
 

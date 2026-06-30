@@ -6,15 +6,14 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="text-white fw-bold m-0">Mais recentes</h4>
         <div>
-            <button class="btn btn-nav me-1">‹</button>
-            <button class="btn btn-nav">›</button>
+            <button id="prev" class="btn btn-nav me-1">‹</button>
+            <button id="next" class="btn btn-nav">›</button>
         </div>
     </div>
-
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 flex-nowrap overflow-hidden">
+    <div id="slider" class="d-flex gap-4 overflow-auto pb-2">
         <div class="col">
             <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
+                <div class="card card-custom h-100 border-0" data-category="ia">
                     <div class="position-relative">
                         <div class="card-img-top thumb-gradient"></div>
                         <span class="badge position-absolute top-0 end-0 m-3 bg-danger-custom">AVANÇADO</span>
@@ -39,7 +38,7 @@
 
         <div class="col">
             <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
+                <div class="card card-custom h-100 border-0" data-category="ia">
                     <div class="position-relative">
                         <div class="card-img-top thumb-mockup"></div>
                         <span
@@ -55,7 +54,7 @@
                         </div>
                         <div
                             class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-dark-light">
-                            <span class="small text-white"><span class="avatar me-1 bg-primary">JS</span> João
+                            <span class="small text-white"><span class="avatar me-1">JS</span> João
                                 Silva</span>
                             <span class="text-primary-custom small fw-bold">Ler mais →</span>
                         </div>
@@ -66,7 +65,7 @@
 
         <div class="col">
             <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
+                <div class="card card-custom h-100 border-0" data-category="programação">
                     <div class="position-relative">
                         <div class="card-img-top thumb-dashboard"></div>
                         <span class="badge position-absolute top-0 end-0 m-3 bg-success-custom">BÁSICO</span>
@@ -91,7 +90,7 @@
 
         <div class="col">
             <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
+                <div class="card card-custom h-100 border-0" data-category="devops">
                     <div class="position-relative">
                         <div class="card-img-top thumb-mockup"></div>
                         <span class="badge position-absolute top-0 end-0 m-3 bg-danger-custom">AVANÇADO</span>
@@ -106,7 +105,7 @@
                         </div>
                         <div
                             class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-dark-light">
-                            <span class="small text-white"><span class="avatar me-1 bg-primary">JS</span> João
+                            <span class="small text-white"><span class="avatar me-1">JS</span> João
                                 Silva</span>
                             <span class="text-primary-custom small fw-bold">Ler mais →</span>
                         </div>
@@ -119,11 +118,10 @@
 
 <section class="container mb-5">
     <h4 class="text-white fw-bold mb-4">Todos os Artigos</h4>
-
     <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
             <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
+                <div class="card card-custom h-100 border-0" data-category="ia">
                     <div class="position-relative">
                         <div class="card-img-top thumb-gradient"></div>
                         <span class="badge position-absolute top-0 end-0 m-3 bg-danger-custom">AVANÇADO</span>
@@ -148,7 +146,7 @@
 
         <div class="col-12 col-md-6 col-lg-4">
             <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
+                <div class="card card-custom h-100 border-0" data-category="ia">
                     <div class="position-relative">
                         <div class="card-img-top thumb-mockup"></div>
                         <span
@@ -164,7 +162,7 @@
                         </div>
                         <div
                             class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-dark-light">
-                            <span class="small text-white"><span class="avatar me-1 bg-primary">JS</span> João
+                            <span class="small text-white"><span class="avatar me-1">JS</span> João
                                 Silva</span>
                             <span class="text-primary-custom small fw-bold">Ler mais →</span>
                         </div>
@@ -175,7 +173,7 @@
 
         <div class="col-12 col-md-6 col-lg-4">
             <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
+                <div class="card card-custom h-100 border-0" data-category="programação">
                     <div class="position-relative">
                         <div class="card-img-top thumb-dashboard"></div>
                         <span class="badge position-absolute top-0 end-0 m-3 bg-success-custom">BÁSICO</span>
