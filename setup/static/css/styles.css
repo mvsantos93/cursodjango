@@ -86,6 +86,11 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
+.card-thumb {
+    height: 160px; /* mesma altura dos thumbs */
+    object-fit: cover;
+}
+
 /* Cores das Badges dos Cards */
 .bg-danger-custom { background-color: #ef4444; font-size: 0.7rem; }
 .bg-warning-custom { background-color: #f59e0b; font-size: 0.7rem; }
@@ -94,17 +99,14 @@ body {
 
 /* Placeholders das Imagens dos Cards com os tons da imagem */
 .thumb-gradient {
-    height: 160px;
     background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
 }
 
 .thumb-mockup {
-    height: 160px;
     background: linear-gradient(135deg, #1e293b, #475569);
 }
 
 .thumb-dashboard {
-    height: 160px;
     background: linear-gradient(135deg, #064e3b, #022c22);
 }
 
