@@ -2,25 +2,40 @@
 {% load static %}
 
 {% block content %}
-
+<section class="container mb-5">
+    <a href="{% url 'index' %}" class="btn-voltar"> ← Voltar</a>
+</section>
 
 <main class="container my-5">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-8">
-            <span class="badge bg-danger-custom mb-3">AVANÇADO</span>
-            <h1 class="text-white fw-bold mb-3">Agente de IA integrado com Google Sheets no n8n</h1>
-            <p class="text-secondary mb-4">Publicado por Ana Costa • 🕒 Ontem</p>
 
-            <div class="thumb-gradient rounded mb-4" style="height: 300px;"></div>
+            <span class="badge bg-primary mb-3">
+                {{ artigo.get_nivel_display }}
+            </span>
+
+            <h1 class="text-white fw-bold mb-3">
+                {{ artigo.titulo }}
+            </h1>
+
+            <p class="text-secondary mb-4">
+                Publicado por {{ artigo.id_fk_autor.nome }}
+                •
+                🕒 {{ artigo.data_publicacao|date:"d/m/Y" }}
+            </p>
+
+            {% if artigo.foto %}
+                <img src="{{ artigo.foto.url }}"
+                     class="img-fluid rounded mb-4 w-100"
+                     alt="{{ artigo.titulo }}">
+            {% else %}
+                <div class="thumb-gradient rounded mb-4" style="height: 300px;"></div>
+            {% endif %}
 
             <article class="text-secondary fs-5 lh-base">
-                <p>Os agentes de inteligência artificial estão a redefinir a automação moderna. Integrar essas
-                    ferramentas com ecossistemas robustos como o Google Sheets usando fluxos do n8n permite criar
-                    pipelines autônomos de dados sem tocar em uma única linha de código tradicional.</p>
-                <h3 class="text-white fw-bold mt-4 mb-3">Por que usar n8n para Agentes de IA?</h3>
-                <p>O n8n oferece nós nativos para LangChain, permitindo a inserção de memória, prompts customizados e
-                    ferramentas específicas diretamente no fluxo de trabalho.</p>
+                {{ artigo.texto|safe }}
             </article>
+
         </div>
     </div>
 </main>
