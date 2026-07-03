@@ -1,4 +1,3 @@
-/* Configurações Gerais do Tema Dark */
 body {
     background-color: #221329;
     color: #ffffff;
@@ -39,12 +38,34 @@ body {
     color: #ffffff;
 }
 
+.text-title {
+    color: #ffffff;
+}
+
+.text-blog {
+    color: #e4b3fc;
+}
+
+.brand-center{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.text-descricao {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.text-descricao .highlight{
+  color: #e4b3fc;
+}
+
 .text-secondary {
     color: #ffffff !important;
     padding-bottom: 10px !important;
 }
 
-/* Badge Superior */
 .badge-status {
     background-color: #512c63;
     border: 1px solid #ffffff;
@@ -52,14 +73,12 @@ body {
     font-size: 0.75rem;
 }
 
-/* Input de Busca */
 .search-box {
     background-color: #512c63;
     border: 1px solid #ffffff;
     color: #ffffff;
 }
 
-/* Filtros / Eixos */
 .btn-filter {
     background-color: #221329;
     border: 1px solid #606060;
@@ -82,7 +101,6 @@ body {
     border-color: #ffffff;
 }
 
-/* Botões de navegação carrossel */
 .btn-nav {
     background-color: #180f1e;
     border: 1px solid #ffffff;
@@ -94,11 +112,11 @@ body {
     line-height: 28px;
 }
 
-/* Estilização dos Cards */
+
 .card-custom {
     width: 100%;
-    max-width: 300px;      /* largura padrão */
-    min-height: 390px;     /* altura padrão */
+    max-width: 300px; 
+    min-height: 390px;
     background-color: #3c2c44;
     border-radius: 12px;
     overflow: hidden;
@@ -116,13 +134,13 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* Cores das Badges dos Cards */
+
 .bg-danger-custom { background-color: #ef4444; font-size: 0.7rem; }
 .bg-warning-custom { background-color: #f59e0b; font-size: 0.7rem; }
 .bg-success-custom { background-color: #10b981; font-size: 0.7rem; }
 .text-primary-custom { color: #b67dd1; }
 
-/* Placeholders das Imagens dos Cards com os tons da imagem */
+
 .thumb-gradient {
     background: linear-gradient(135deg, #6430a0, #b385e7, #6430a0);
 }
@@ -135,7 +153,7 @@ body {
     background: linear-gradient(135deg, #064e3b, #022c22);
 }
 
-/* Elementos Internos do Card */
+
 .avatar {
     display: inline-block;
     width: 24px;
@@ -151,4 +169,39 @@ body {
 .text-xs {
     font-size: 0.75rem;
     color: #ffffff;
+}
+
+.tracking-tight {
+    letter-spacing: -0.025em;
+}
+
+.quote-text {
+    font-size: 0.78rem;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.border-dark-light {
+    border-color: #1e2638 !important;
+}
+
+.social-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #221329;
+    border: 1px solid #606060;
+    color: #ffffff;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover {
+    background-color: #512c63 !important;
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-3px);
 }

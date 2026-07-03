@@ -21,34 +21,6 @@
 
 <script>
 
-//
-// PESQUISA
-//
-
-const searchInput = document.getElementById("searchInput");
-
-if (searchInput){
-
-    searchInput.addEventListener("keyup", function(){
-
-        const texto = this.value.toLowerCase();
-
-        document.querySelectorAll(".card-custom").forEach(card=>{
-
-            const titulo = card.querySelector(".card-title")
-                               .textContent
-                               .toLowerCase();
-
-            card.parentElement.parentElement.style.display =
-                titulo.includes(texto)
-                ? ""
-                : "none";
-
-        });
-
-    });
-
-}
 
 //
 // FILTROS

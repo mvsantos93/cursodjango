@@ -2,33 +2,42 @@
 {% load static %}
 
 {% block content %}
-<section class="container mb-5">
-    <div class="search-box p-3 rounded d-flex align-items-center">
-        <span class="text-secondary me-3">🔍</span>
-        <input type="text" id="searchInput" class="form-control border-0 text-black shadow-none" placeholder="Pesquisar..">
-    </div>
+<br>
+
+<header class="container my-4 text-secondary">
+        <p class="text-descricao">Artigos sobre a minha caminhada em <span class="highlight">Game Dev</span> e <span class="highlight">Full-Stack</span>.</p>
+</header>
+
+<section class="container my-5">
+    <form method="GET" action="{% url 'index' %}">
+        {% if eixo_selecionado %}
+            <input type="hidden" name="eixo" value="{{ eixo_selecionado }}">
+        {% endif %}
+        <div class="input-group search-bar-container">
+            <input type="text" name="busca" class="form-control border-0 text-black shadow-none"
+                placeholder="Pesquisar artigos por título, autor ou eixo..." 
+                value="{{ termo_busca|default:'' }}">
+            <button class="btn btn-dark" type="submit">🔍 Pesquisar</button>
+        </div>
+    </form>
 </section>
 
 <section class="container mb-5">
     <h5 class="text-white fw-bold mb-3">Eixos de Tecnologia</h5>
         <div class="d-flex flex-wrap gap-2">
-            <a href="{% url 'index' %}"
-            class="btn btn-filter {% if not eixo_selecionado %}active{% endif %}">
-                Todos os artigos
-            </a>
+            <a href="?{% if termo_busca %}busca={{ termo_busca }}{% endif %}" 
+            class="btn btn-filter {% if not eixo_selecionado %}active{% endif %}">Todos os artigos</a>
 
-            {% for eixo in eixos %}
-                <a href="{% url 'index' %}?eixo={{ eixo.id }}"
-                class="btn btn-filter {% if eixo_selecionado == eixo.id|stringformat:'s' %}active{% endif %}">
-                    {{ eixo.nome }}
-                </a>
-            {% endfor %}
+        {% for eixo in eixos %}
+            <a href="?eixo={{ eixo.id }}{% if termo_busca %}&busca={{ termo_busca }}{% endif %}" 
+            class="btn btn-filter {% if eixo_selecionado == eixo.id|slugify %}active{% endif %}">{{ eixo.nome }}</a>
+        {% endfor %}
         </div>
 </section>
 
 <section class="container mb-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="text-white fw-bold m-0">Mais recentes</h4>
+        <h4 class="text-white fw-bold m-0">Artigos recentes</h4>
         <div>
             <button id="prev" class="btn btn-nav me-1">‹</button>
             <button id="next" class="btn btn-nav">›</button>
