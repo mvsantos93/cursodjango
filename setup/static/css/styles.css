@@ -29,10 +29,6 @@ body {
     background-color: #180e1f;
 }
 
-.border-dark-light {
-    border-color: #ffffff;
-}
-
 .max-w-text {
     max-width: 600px;
     color: #ffffff;
@@ -182,7 +178,7 @@ body {
 }
 
 .border-dark-light {
-    border-color: #1e2638 !important;
+    border-color: #6f219300 !important;
 }
 
 .social-link {
