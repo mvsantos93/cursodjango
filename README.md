@@ -1,8 +1,7 @@
 # Blog Python+Django
 Projeto desenvolvido durante o curso "__Web Back-End com Python e Django__" no SENAI.
 
-O objetivo foi desenvolver um blog funcional e responsivo utilizando a linguagem Python com o framework Django.  
-O blog seria utilizado para a criação de artigos sobre tecnologias da área de TI.
+O objetivo foi desenvolver um blog funcional e responsivo utilizando a linguagem Python com o framework Django. O blog seria utilizado para a criação de artigos sobre tecnologias da área de TI.
 
 Ao final do curso, cada aluno pôde personalizar o projeto conforme sua proposta.  
 No meu projeto, decidi que seria um blog sobre a minha caminhada como desenvolvedor.  
